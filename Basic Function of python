@@ -1,149 +1,83 @@
-###python function
-- **Mathematical Operations**  
-- **String Manipulation**  
-- **File Handling**  
-- **List, Tuple, Dictionary Operations**  
-- **Date & Time Functions**  
-- **OS and System Operations**  
-- **Networking**  
-- **Threading**  
-- **Basic Cybersecurity Functions**  
+# Basic Python Functions with Output
 
-Here's a Python script that showcases many fundamental functions:  
+# 1. print()
+print("Hello, World!")
 
----
+# 2. type()
+print(type(10))
+print(type(3.14))
+print(type("Python"))
 
-### **Comprehensive Python Function Demonstration**
-```python
-import os
-import sys
-import time
-import datetime
-import math
-import random
-import threading
-import hashlib
-import socket
+# 3. len()
+print(len("Python"))
+print(len([1, 2, 3, 4, 5]))
 
-# Basic Math Functions
-def math_operations():
-    a, b = 10, 3
-    print("\nMath Operations:")
-    print(f"Addition: {a} + {b} = {a + b}")
-    print(f"Subtraction: {a} - {b} = {a - b}")
-    print(f"Multiplication: {a} * {b} = {a * b}")
-    print(f"Division: {a} / {b} = {a / b}")
-    print(f"Power: {a} ** {b} = {a ** b}")
-    print(f"Square Root: sqrt(16) = {math.sqrt(16)}")
+# 4. abs()
+print(abs(-10))
+print(abs(5))
 
-# String Operations
-def string_operations():
-    s = "Hello, Python!"
-    print("\nString Operations:")
-    print(f"Uppercase: {s.upper()}")
-    print(f"Lowercase: {s.lower()}")
-    print(f"Replace: {s.replace('Python', 'World')}")
-    print(f"Split: {s.split(', ')}")
-    print(f"Reverse: {s[::-1]}")
+# 5. round()
+print(round(3.456))
+print(round(3.456, 2))
 
-# File Handling
-def file_operations():
-    print("\nFile Operations:")
-    filename = "testfile.txt"
-    
-    with open(filename, "w") as f:
-        f.write("Hello, this is a test file.\n")
-    
-    with open(filename, "r") as f:
-        content = f.read()
-        print(f"File Read: {content}")
-    
-    os.remove(filename)
-    print(f"File '{filename}' deleted.")
+# 6. max() and min()
+print(max(10, 20, 30))
+print(min(10, 20, 30))
 
-# List Operations
-def list_operations():
-    lst = [10, 20, 30, 40, 50]
-    print("\nList Operations:")
-    print(f"Original List: {lst}")
-    lst.append(60)
-    print(f"After Append: {lst}")
-    lst.remove(30)
-    print(f"After Remove: {lst}")
-    print(f"Sorted List: {sorted(lst, reverse=True)}")
+# 7. sum()
+print(sum([1, 2, 3, 4, 5]))
 
-# Dictionary Operations
-def dict_operations():
-    d = {"name": "Alice", "age": 25, "city": "NY"}
-    print("\nDictionary Operations:")
-    print(f"Keys: {list(d.keys())}")
-    print(f"Values: {list(d.values())}")
-    d["age"] = 26
-    print(f"Updated Dict: {d}")
+# 8. sorted()
+print(sorted([3, 1, 4, 1, 5, 9]))
 
-# Date & Time
-def date_time_operations():
-    now = datetime.datetime.now()
-    print("\nDate & Time Operations:")
-    print(f"Current Date & Time: {now}")
-    print(f"Formatted: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+# 9. input() (Uncomment to test, as it requires user input)
+# name = input("Enter your name: ")
+# print("Hello,", name)
 
-# OS & System Functions
-def system_operations():
-    print("\nOS & System Operations:")
-    print(f"Current Working Directory: {os.getcwd()}")
-    print(f"System Platform: {sys.platform}")
+# 10. Type Conversion Functions
+print(int("10"))
+print(float("3.14"))
+print(str(100))
 
-# Random Number Generation
-def random_operations():
-    print("\nRandom Number Operations:")
-    print(f"Random Integer (1-100): {random.randint(1, 100)}")
-    print(f"Random Choice: {random.choice(['Red', 'Green', 'Blue'])}")
+# 11. list(), tuple(), set(), dict()
+print(list("hello"))
+print(tuple([1, 2, 3]))
+print(set([1, 2, 2, 3]))
+print(dict(name="Alice", age=25))
 
-# Hashing (Basic Cybersecurity Function)
-def hashing_function():
-    data = "password123"
-    hashed = hashlib.sha256(data.encode()).hexdigest()
-    print("\nHashing Function:")
-    print(f"SHA-256 Hash of 'password123': {hashed}")
+# 12. range()
+print(list(range(5)))
+print(list(range(1, 10, 2)))
 
-# Networking - Get IP Address
-def network_operations():
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
-    print("\nNetworking Operations:")
-    print(f"Hostname: {hostname}")
-    print(f"Local IP Address: {ip_address}")
+# 13. enumerate()
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
 
-# Threading Example
-def print_numbers():
-    for i in range(5):
-        print(f"Thread Running: {i}")
-        time.sleep(1)
+# 14. zip()
+names = ["Alice", "Bob"]
+scores = [90, 80]
+print(list(zip(names, scores)))
 
-def threading_example():
-    print("\nThreading Example:")
-    thread = threading.Thread(target=print_numbers)
-    thread.start()
-    thread.join()
+# 15. map()
+numbers = [1, 2, 3, 4]
+print(list(map(lambda x: x * 2, numbers)))
 
-# Run all functions
-def main():
-    math_operations()
-    string_operations()
-    file_operations()
-    list_operations()
-    dict_operations()
-    date_time_operations()
-    system_operations()
-    random_operations()
-    hashing_function()
-    network_operations()
-    threading_example()
+# 16. filter()
+numbers = [1, 2, 3, 4, 5, 6]
+print(list(filter(lambda x: x % 2 == 0, numbers)))
 
-if __name__ == "__main__":
-    main()
+# 17. eval()
+print(eval("10 + 5"))
 
+# 18. any() and all()
+print(any([False, True, False]))
+print(all([True, True, False]))
 
+# 19. id()
+x = 10
+print(id(x))
 
+# 20. help() (Uncomment to see detailed help)
+# help(print)
 
